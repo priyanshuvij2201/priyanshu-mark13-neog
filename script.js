@@ -114,23 +114,25 @@ function previousDate(date){
   var year = date.year;
    var dateMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
    if(day==0){
-    if(month==0){
-      month=12;
-      year=year-1;
-   }
-    else if(month==3){
+   if(month==3){
         if(checkLeapYear(year)){
           day=29;
           month=2;}
         else{
           day=28;
           month=2;}}
-    else{
+    else {
          month=month-1;
          day=dateMonth[month-1];
         }
+    if(month==0){
+         
+          month=12;
+          day=dateMonth[month-1];
+          year=year-1;
+       }
     }
-    
+    console.log(day+ " "+month+ ""+year);
   return {
     day: day,
     month: month,
