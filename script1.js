@@ -39,7 +39,7 @@ function checkPalindrome(name) {
   }
 
   function checkAllFormat(date){
-var allFormat=dateVariation(date);
+ var allFormat=dateVariation(date);
 var p=1;
 for (let i = 0; i < allFormat.length; i++) {
     if (checkPalindrome(allFormat[i]) == true){
@@ -53,8 +53,7 @@ if(p==1){
 return false;
 }
 
-
-  }
+}
 
   function nextDate(date){
       date.day=date.day+1;
@@ -73,23 +72,27 @@ return false;
 
   } 
 
-  function nextPalindromeDate(date)
-  { var a=false;
-   var date1 = nextDate(date);
+   function nextPalindromeDate(date)
+{ 
+    var a=false;
+    var date1 = nextDate(date);
+    console.log(date);
     var b=1;
     while(a == false)
     {
         a = (checkAllFormat(date1));
-        next= nextDate(date1);}
-
-
+        next= nextDate(date1);
+        console.log(next);
+    }
 }
 
 
 
-  var ctr1=0;
+var ctr1=0;
+  
   function previousDate(date){
     ctr1++;
+    var date=date;
      date.day=date.day-1;
      var dateMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
      if(date.day==0)
@@ -107,11 +110,13 @@ return false;
   function previousPalindrome(date)
   { var a=false;
    var date1 = previousDate(date);
+  
     var b=1;
     while(a == false)
     {
         a = checkAllFormat(date1);
-        prev= previousDate(date1);}
+        prev= previousDate(date1);
+        console.log(date1);}
   }
 //   function clickHandler(e) {
 //     var bdayString = bdayInput.value;
@@ -154,16 +159,19 @@ return false;
 //     }
 //   }
   
-  var date={
+  
+var date={
     day: 07,
     month:07,
     year: 2022
   }
-
-  previousPalindrome(date);
-  var date={
-    day: 07,
-    month:07,
-    year: 2022
-  }
-  nextPalindromeDate(date);
+// checkNumberButton=document.querySelector(".check-number");
+// checkNumberButton.addEventListener('click',()=>callboth(date));
+  
+    previousPalindrome(date);
+    var date={
+        day: 07,
+        month:07,
+        year: 2022
+      }              
+    nextPalindromeDate(date);

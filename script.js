@@ -239,6 +239,9 @@ outputBoxArea.innerHTML="Your birthday is not a palindrome , you missed it by " 
 }
 
 }
+else{
+  outputBoxArea.innerHTML="Hurray! Your birthday is a palindrome";
+}
 
 }
 
